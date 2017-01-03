@@ -98,7 +98,10 @@ module.exports = {
 					try
 					{
 						var scope = angular.element(elem).isolateScope();
-						angular.element(elem).html(injector.get('$compile')(entry.data)(scope));
+						scope.$apply(() =>
+						{
+							angular.element(elem).html(injector.get('$compile')(entry.data)(scope));
+						});
 					}
 					catch(e)
 					{
