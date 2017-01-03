@@ -1,30 +1,21 @@
 {
   "name": "composit",
   "version": "0.1.1",
-  "description": "Warp-speed web development environment",
+  "description": "A supercharged and compact front-end app development framework.",
   "main": "index.js",
-  "files": [
-    "README.md",
-    "index.js",
-    "src/**/*"
-  ],
   "author": "Ryan Vandersmith <ryanvandersmith@gmail.com>",
   "dependencies": {
-    "gulp-sass": "^2.3.2",
-    "async": "^2.0.1",
-    "body-parser": "^1.15.1",
+    "babel": "^6.5.2",
+    "babel-core": "^6.21.0",
+    "babel-preset-es2015": "^6.18.0",
+    "backup": "^1.1.0",
+    "body-parser": "^1.15.2",
     "cookie-parser": "^1.4.3",
-    "ejs": "^2.4.2",
-    "express": "^4.13.4"
-  },
-  "devDependencies": {
-    "del": "^2.2.2",
-    "gulp": "^3.9.1",
-    "gulp-babel": "^6.1.2",
-    "gulp-concat": "^2.6.1",
-    "gulp-ejs": "^2.2.1",
-    "gulp-ngmin": "^0.3.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-uglify": "^2.0.0"
+    "ejs": "^2.5.5",
+    "express": "^4.14.0",
+    "fs-extra": "^1.0.0",
+    "glob": "^7.1.1",
+    "ngmin": "^0.5.0",
+    "uglify-js": "^2.7.5"
   }
 }

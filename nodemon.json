@@ -1,3 +1,4 @@
 {
-	"ext": "*"
+	"ext": "*",
+	"ignore": ["test/www/**/*"]
 }

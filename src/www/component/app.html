@@ -1,0 +1,33 @@
+<div class="row">
+	<div class="col-md-3 height-full height-scroll">
+		<br>
+		<div class="container">
+			<ul class="list-group">
+				<div ng-repeat="dir in $ctrl.dirs">
+					<div class="text-muted m-1" style="margin-bottom:5px">
+						<p class="list-group-item-text" ng-bind="dir.path"></p>
+					</div>
+					<a class="list-group-item" style="padding:8px" ng-repeat="path in dir.files" ng-class="{'text-warning':$ctrl.currentTab.path==path}" ng-click="$ctrl.openFile(path)">
+						<p class="list-group-item-text mx-1" ng-bind="path.substring(path.lastIndexOf('/') + 1)"></p>
+					</a>
+				</div>
+			</ul>
+		</div>
+	</div>
+	<div class="col-md-9 page-height page-scroll">
+		<br>
+		<div class="container">
+			<span class="btn btn-outline-warning float-xs-right" ng-if="!$ctrl.hasViewport()" ng-click="$ctrl.openViewport()">View Live</span>
+			<span class="btn btn-outline-secondary float-xs-right" ng-if="$ctrl.hasViewport()" ng-click="$ctrl.openViewport()">Refresh</span>
+			<h3 class="text-warning ml-3 mb-1">
+				<span class="text-muted" ng-bind="$ctrl.currentTab.path.substring(0, $ctrl.currentTab.path.lastIndexOf('/')) + '/'"></span><span ng-bind="$ctrl.currentTab.path.substring($ctrl.currentTab.path.lastIndexOf('/') + 1)"></span>
+			</h3>
+			<ul class="nav nav-tabs p-0" role="tablist">
+				<li class="nav-item" ng-repeat="tab in $ctrl.tabs">
+					<a class="nav-link" ng-class="{active:$ctrl.currentTab==tab}" ng-bind="tab.name || tab.ext" ng-click="$ctrl.setTab(tab)"></a>
+				</li>
+			</ul>
+			<c-editor path="{{$ctrl.currentTab.path}}"></c-editor>
+		</div>
+	</div>
+</div>
