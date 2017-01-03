@@ -182,15 +182,8 @@ angular.module('composit', ['ngAnimate', 'ui.bootstrap'])
 	{
 		return file._buffer(() =>
 		{
-			try
-			{
-				Composit.notify(file);
-				API.post('file', file);
-			}
-			catch(e)
-			{
-				console.error(e);
-			}
+			API.post('file', file);
+			Composit.notify(file);
 		});
 	}
 })
