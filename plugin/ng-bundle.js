@@ -95,8 +95,15 @@ module.exports = {
 				
 				angular.element(getName(entry)).each((i, elem) =>
 				{
-					var scope = angular.element(elem).isolateScope();
-					angular.element(elem).html(injector.get('$compile')(entry.data)(scope));
+					try
+					{
+						var scope = angular.element(elem).isolateScope();
+						angular.element(elem).html(injector.get('$compile')(entry.data)(scope));
+					}
+					catch(e)
+					{
+						console.error('Failed to dynamically update ' + entry.name, e);
+					}
 				});
 			}));
 			
